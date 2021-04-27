@@ -2,7 +2,9 @@ FROM centos/nodejs-10-centos7
 MAINTAINER Chris Nuland
 WORKDIR /workspace/source
 RUN pwd
-RUN ls
-RUN cp /src/main.js $HOME/main.js
-RUN cp /src/package.json $HOME/package.json
+RUN ls /
+RUN ls /home
+RUN ls /workspace
+RUN cp ./src/main.js $HOME/main.js
+RUN cp ./src/package.json $HOME/package.json
 EXPOSE 8080

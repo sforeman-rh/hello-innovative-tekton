@@ -15,6 +15,9 @@ spec:
       - podSelector:
           matchLabels:
             tekton.dev/tags: git
+      - podSelector:
+          matchLabels:
+            app.kubernetes.io/component: affinity-assistant
       ports:
         - protocol: TCP
           port: 443
