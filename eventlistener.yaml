@@ -1,0 +1,9 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: EventListener
+metadata:
+  name: hello-chris-eventlistener 
+spec:
+  serviceAccountName: pipeline
+  triggers:
+    - triggerRef: hello-chris-trigger
+
