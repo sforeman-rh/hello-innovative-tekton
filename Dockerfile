@@ -1,4 +1,4 @@
-FROM centos/nodejs-10-centos7
+FROM centos/nodejs-10-centos8
 MAINTAINER Chris Nuland
 WORKDIR /workspace/source/src
 RUN pwd
