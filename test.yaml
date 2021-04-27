@@ -1,21 +1,21 @@
-- apiVersion: tekton.dev/v1beta1
-     kind: PipelineRun
-     metadata:
-       name: hello-chris-$(tt.params.git-repo-name)-$(uid)
-     spec:
-       serviceAccountName: pipeline
-       pipelineRef:
-         name: hello-chris-pipeline
-       params:
-       - name: deployment-name
-         value: "hello-chris"
-       - name: git-url
-         value: "ssh://git@gitlab.consulting.redhat.com:2222/cnuland/hello-chris.git"
-       - name: git-revision
-         value: "master"
-       - name: IMAGE
-         value: "image-registry.openshift-image-registry.svc:5000/tekton-pipeline-test/$(tt.params.git-repo-name)"
-       workspaces:
-       - name: shared-workspace
-         persistentvolumeclaim:
-           claimName: tekton-pvc
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: hello-chris-test
+spec:
+  serviceAccountName: pipeline
+  pipelineRef:
+    name: hello-chris-pipeline
+  params:
+  - name: deployment-name
+    value: "hello-chris"
+  - name: git-url
+    value: "ssh://git@gitlab.consulting.redhat.com:2222/cnuland/hello-chris.git"
+  - name: git-revision
+    value: "master"
+  - name: IMAGE
+    value: "image-registry.openshift-image-registry.svc:5000/tekton-pipeline-test/$(tt.params.git-repo-name)"
+  workspaces:
+  - name: shared-workspace
+    persistentvolumeclaim:
+      claimName: tekton-pvc

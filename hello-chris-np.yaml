@@ -1,0 +1,20 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: tekton-pipeline-test
+  namespace: tekton-operator
+spec:
+  podSelector:
+    matchLabels:
+      app: tekton-triggers-webhook
+  ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            tekton.dev/tags: image-build   
+      - podSelector:
+          matchLabels:
+            tekton.dev/tags: git
+      ports:
+        - protocol: TCP
+          port: 443
