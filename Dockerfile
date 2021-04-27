@@ -1,4 +1,4 @@
-FROM centos/centos8:latest
+FROM quay.io/app-sre/ubi8-nodejs-10:latest
 MAINTAINER Chris Nuland
 WORKDIR /workspace/source/src
 USER 0
