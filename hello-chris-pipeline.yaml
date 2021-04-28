@@ -25,7 +25,7 @@ spec:
       name: git-clone
       kind: ClusterTask
     workspaces:
-    - name: source
+    - name: output
       workspace: shared-workspace
     params:
     - name: url
@@ -44,6 +44,8 @@ spec:
     - name: IMAGE
       value: $(params.IMAGE)
     workspaces:
+    - name: output
+      workspace: shared-workspace
     - name: source
       workspace: shared-workspace
     runAfter:
