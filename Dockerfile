@@ -4,6 +4,6 @@ WORKDIR /workspace/source/src
 RUN pwd
 RUN ls
 RUN echo $HOME
-ADD /workspace/source/src/main.js $HOME/main.js
-ADD /workspace/source/src/package.json $HOME/package.json
+ADD main.js $HOME/main.js
+ADD package.json $HOME/package.json
 EXPOSE 8080
