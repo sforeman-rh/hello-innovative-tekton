@@ -1,8 +1,10 @@
 FROM quay.io/app-sre/ubi8-nodejs-10:latest
 MAINTAINER Chris Nuland
 USER 0
-RUN sudo ls /
-RUN sudo ls /var/lib
+RUN ls /
+RUN ls /var/lib
+RUN whoami
+RUN id
 RUN pwd
 RUN ls
 RUN echo $HOME
