@@ -6,11 +6,11 @@ metadata:
 spec:
   params:
   - name: deployment-name
-    value: $(body.intercepted.working-dir)
+    value: $(extensions.working-dir)
   - name: git-url 
     value: $(body.project.ssh_url)
   - name: git-revision
     value: $(body.commits[0].id)
   - name: working-dir
-    value: $(extensions.intercepted.working-dir)
+    value: $(extensions.working-dir)
 

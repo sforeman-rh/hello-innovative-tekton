@@ -11,7 +11,7 @@ spec:
         filter: >-
           body.commits[0].title.split(" ")[0] == "hello-chris"
         overlays:
-        - key: intercepted.working-dir
+        - key: working-dir
           expression: 'body.commits[0].title.split(" ")[0]'
     bindings:
     - kind: ClusterTriggerBinding       
@@ -24,7 +24,7 @@ spec:
         filter: >-
           body.commits[0].title.split(" ")[0] == "hello-dave"
         overlays:
-        - key: intercepted.working-dir
+        - key: working-dir
           expression: 'body.commits[0].title.split(" ")[0]'
     bindings:
     - kind: ClusterTriggerBinding
