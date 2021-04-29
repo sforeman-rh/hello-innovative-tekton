@@ -2,7 +2,7 @@
 apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerTemplate
 metadata:
-  name: hello-chris-triggertemplate 
+  name: hello-chris-template 
 spec:
   params:
   - name: git-repo-url
