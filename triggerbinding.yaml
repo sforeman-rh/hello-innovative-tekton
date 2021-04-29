@@ -1,6 +1,6 @@
 ---
 apiVersion: triggers.tekton.dev/v1alpha1
-kind: TriggerBinding
+kind: ClusterTriggerBinding
 metadata:
   name: hello-chris-binding 
 spec:
