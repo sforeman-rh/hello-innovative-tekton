@@ -14,7 +14,9 @@ spec:
   - name: git-revision
     value: "master"
   - name: IMAGE
-    value: "image-registry.openshift-image-registry.svc:5000/tekton-pipeline-test/$(tt.params.deployment-name)"
+    value: "image-registry.openshift-image-registry.svc:5000/tekton-pipeline-test/hello-chris"
+  - name: TLSVERIFY
+    value: "false"
   workspaces:
   - name: shared-workspace
     persistentvolumeclaim:

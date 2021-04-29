@@ -19,6 +19,14 @@ spec:
   - name: IMAGE
     type: string
     description: image to be built from the code
+  - name: TLSVERIFY
+    type: string
+    default: "false"
+    description: tls verification
+  - name: working-dir
+    type: string
+    default: ""
+    description: default working directory to build from
   tasks:
   - name: fetch-repository
     taskRef:
@@ -31,7 +39,7 @@ spec:
     - name: url
       value: $(params.git-url)
     - name: subdirectory
-      value: ""
+      value: $(params.working-dir)
     - name: deleteExisting
       value: "true"
     - name: revision
@@ -43,6 +51,8 @@ spec:
     params:
     - name: IMAGE
       value: $(params.IMAGE)
+    - name: TLSVERIFY
+      value: $(params.TLSVERIFY)
     workspaces:
     - name: output
       workspace: shared-workspace

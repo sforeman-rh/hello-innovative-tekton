@@ -10,8 +10,10 @@ spec:
   - name: git-revision
     description: The git revision
     default: master
-  - name: git-repo-name
+  - name: deployment-name
     description: The name of the deployment to be created / patched
+  - name: working-dir
+    description: working directory to build from
   resourcetemplates:
   - apiVersion: tekton.dev/v1beta1
     kind: PipelineRun
@@ -28,8 +30,10 @@ spec:
         value: $(tt.params.git-repo-url)
       - name: git-revision
         value: $(tt.params.git-revision)
+      - name: working-dir
+        value: $(tt.params.working-dir)
       - name: IMAGE
-        value: "image-registry.openshift-image-registry.svc:5000/tekton-pipeline-test/$(tt.params.git-repo-name)"
+        value: "image-registry.openshift-image-registry.svc:5000/tekton-pipeline-test/$(tt.params.deployment-name)"
       workspaces:
       - name: shared-workspace
         persistentvolumeclaim:
