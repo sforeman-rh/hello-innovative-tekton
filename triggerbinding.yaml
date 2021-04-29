@@ -12,5 +12,5 @@ spec:
   - name: git-revision
     value: $(body.commits[0].id)
   - name: working-dir
-    value: $(body.intercepted.working-dir)
+    value: $(extensions.intercepted.working-dir)
 
