@@ -7,10 +7,10 @@ spec:
   params:
   - name: deployment-name
     value: $(body.intercepted.working-dir)
-  - name: 
-    value: $(body.repository.name)
+  - name: git-url 
+    value: $(body.project.ssh_url)
   - name: git-revision
     value: $(body.commits[0].id)
- - name: working-dir
-     value: $(body.intercepted.working-dir)
+  - name: working-dir
+    value: $(body.intercepted.working-dir)
 

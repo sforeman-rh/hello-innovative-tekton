@@ -18,14 +18,14 @@ spec:
   - apiVersion: tekton.dev/v1beta1
     kind: PipelineRun
     metadata:
-      name: hello-chris-$(tt.params.git-repo-name)-$(uid)
+      name: hello-chris-
     spec:
       serviceAccountName: pipeline
       pipelineRef:
         name: hello-chris-pipeline 
       params:
       - name: deployment-name
-        value: $(tt.params.git-repo-name) 
+        value: $(tt.params.working-dir) 
       - name: git-url
         value: $(tt.params.git-repo-url)
       - name: git-revision

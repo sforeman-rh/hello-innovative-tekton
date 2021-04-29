@@ -9,25 +9,25 @@ spec:
     interceptors:
     - cel:
         filter: >-
-           body.contains("/src")
+          body.commits[0].title.split(" ")[0] == "hello-chris"
         overlays:
         - key: intercepted.working-dir
-          expression: "'/src'"
+          expression: "'hello-chris'"
     bindings:
     - kind: ClusterTriggerBinding       
       ref: hello-chris-binding
     template:
-      name: hello-chris-template
+      ref: hello-chris-template
   - name: hello-dave-trigger
     interceptors:
     - cel:
         filter: >-
-          body.contains("/src2")
+          body.commits[0].title.split(" ")[0] == "hello-dave"
         overlays:
         - key: intercepted.working-dir
-          expression: "'/src2'"
+          expression: "'hello-dave'"
     bindings:
     - kind: ClusterTriggerBinding
       ref: hello-chris-binding
     template:
-      name: hello-chris-template
+      ref: hello-chris-template
