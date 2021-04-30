@@ -18,7 +18,7 @@ spec:
   - apiVersion: tekton.dev/v1beta1
     kind: PipelineRun
     metadata:
-      name: hello-chris-$(tt.params.deployment-name)-$(tt.params.git-revision)
+      name: hello-chris-$(tt.params.deployment-name)-$(uid)
     spec:
       serviceAccountName: pipeline
       pipelineRef:
