@@ -3,6 +3,6 @@ A generic hello world NodeJS application for use in DevOps projects. The Dockerf
 
 This project also shows an example of using the EventListener CEL interceptor to trigger builds on specific project folders inside a monorepository.
 
-Note: To make this work I used the generic git-clone ClusterTask but modified the generic buildah to include a seperate workspace for consumption of the output of the git-clone task.
+Note: To make this work I used the generic git-clone ClusterTask but modified the generic buildah ClusterTask to include a seperate workspace called `output` for consumption of the output of the git-clone task.
 
 Feel free to pull, fork, and modify as desired.
