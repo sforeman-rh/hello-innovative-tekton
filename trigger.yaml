@@ -7,5 +7,5 @@ spec:
   bindings:
     - ref: hello-chris-triggerbinding 
   template:
-     name: hello-chros-triggertemplate 
+     name: hello-chris-triggertemplate 
 
