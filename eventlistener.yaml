@@ -5,27 +5,29 @@ metadata:
 spec:
   serviceAccountName: pipeline
   triggers:
-    - name: hello-chris-trigger
-      interceptors:
-        - cel:
-            filter: >-
-               body.contains("/src")
-            overlays:
-              - key: intercepted.working-dir
-                expression: "'/src'"
-      bindings:
-        - name: hello-chris-binding
-      template:
-        name: hello-chris-template
-    - name: hello-dave-trigger
-      interceptors:
-        - cel:
-            filter: >-
-               body.contains("/src2")
-            overlays:
-              - key: intercepted.working-dir
-                expression: "'/src2'"
-      bindings:
-        - name: hello-chris-binding
-      template:
-        name: hello-chris-template
+  - name: hello-chris-trigger
+    interceptors:
+    - cel:
+        filter: >-
+          body.commits[0].title.split(" ")[0] == "hello-chris"
+        overlays:
+        - key: working-dir
+          expression: 'body.commits[0].title.split(" ")[0]'
+    bindings:
+    - kind: ClusterTriggerBinding       
+      ref: hello-chris-binding
+    template:
+      ref: hello-chris-template
+  - name: hello-dave-trigger
+    interceptors:
+    - cel:
+        filter: >-
+          body.commits[0].title.split(" ")[0] == "hello-dave"
+        overlays:
+        - key: working-dir
+          expression: 'body.commits[0].title.split(" ")[0]'
+    bindings:
+    - kind: ClusterTriggerBinding
+      ref: hello-chris-binding
+    template:
+      ref: hello-chris-template

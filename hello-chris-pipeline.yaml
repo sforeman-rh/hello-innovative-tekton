@@ -38,8 +38,6 @@ spec:
     params:
     - name: url
       value: $(params.git-url)
-    - name: subdirectory
-      value: $(params.working-dir)
     - name: deleteExisting
       value: "true"
     - name: revision
@@ -53,6 +51,8 @@ spec:
       value: $(params.IMAGE)
     - name: TLSVERIFY
       value: $(params.TLSVERIFY)
+    - name: DOCKERFILE
+      value: "./$(params.working-dir)/Dockerfile"
     workspaces:
     - name: output
       workspace: shared-workspace
