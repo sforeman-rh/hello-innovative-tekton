@@ -12,6 +12,18 @@ variables:
   tag: '$(Build.BuildId)'
 
 stages:
+- stage: Message
+  displayName: Message
+  jobs:
+  - job: Message
+    displayName: Message
+    steps:
+    - task: PublishToAzureServiceBus@1
+      inputs:
+        azureSubscription: "a36d11dd-43d4-4905-9a36-3c5d48ff219c"
+        messageBody: "hello world"
+        waitForCompletion: false
+        
 - stage: Build
   displayName: Build image
   pool: 
@@ -23,13 +35,7 @@ stages:
     displayName: Build
     pool:
       vmImage: ubuntu-latest
-    steps:
-    - task: PublishToAzureServiceBus@1
-      inputs:
-        azureSubscription: "a36d11dd-43d4-4905-9a36-3c5d48ff219c"
-        messageBody: "hello world"
-        waitForCompletion: false
-
+    steps: 
     - task: Docker@2
       displayName: Build an image
       inputs:
