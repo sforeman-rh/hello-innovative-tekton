@@ -24,6 +24,12 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
+    - task: PublishToAzureServiceBus@1
+      inputs:
+        azureSubscription: "a36d11dd-43d4-4905-9a36-3c5d48ff219c"
+        messageBody: "hello world"
+        waitForCompletion: false
+
     - task: Docker@2
       displayName: Build an image
       inputs:
