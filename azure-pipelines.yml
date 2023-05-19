@@ -21,9 +21,10 @@ stages:
     steps:
     - task: PublishToAzureServiceBus@1
       inputs:
-        azureSubscription: "a36d11dd-43d4-4905-9a36-3c5d48ff219c"
+        azureSubscription: "25feefd7-0c15-48ef-9d82-dfcf97f35b75"
         messageBody: "hello world"
         waitForCompletion: false
+
 
 - stage: Build
   displayName: Build image
