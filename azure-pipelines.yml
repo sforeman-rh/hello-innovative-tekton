@@ -21,7 +21,7 @@ stages:
     steps:
     - task: PublishToAzureServiceBus@1
       inputs:
-        azureSubscription: "25feefd7-0c15-48ef-9d82-dfcf97f35b75"
+        azureSubscription: message
         messageBody: "hello world"
         waitForCompletion: false
 
