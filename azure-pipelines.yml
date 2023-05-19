@@ -14,6 +14,10 @@ variables:
 stages:
 - stage: Build
   displayName: Build image
+  pool: 
+   name: pool-test
+   demands:
+    - agent.name -equals Agentname
   jobs:
   - job: Build
     displayName: Build
