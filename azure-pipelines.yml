@@ -22,7 +22,8 @@ stages:
     - task: PublishToAzureServiceBus@1
       inputs:
         azureSubscription: message
-        messageBody: "hello world"
+        messageBody: |
+           {"number": 5}
         waitForCompletion: false
         useDataContractSerializer: false
 
