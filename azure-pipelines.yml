@@ -24,6 +24,7 @@ stages:
         azureSubscription: message
         messageBody: "hello world"
         waitForCompletion: false
+        useDataContractSerializer: false
 
 
 - stage: Build
