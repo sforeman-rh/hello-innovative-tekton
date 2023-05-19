@@ -20,6 +20,12 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
+    - task: CmdLine@2
+      inputs:
+        script: |
+          echo  '$(System.DefaultWorkingDirectory)'
+          dir
+          dir hello-chris
     - task: Docker@2
       displayName: Build an image
       inputs:
