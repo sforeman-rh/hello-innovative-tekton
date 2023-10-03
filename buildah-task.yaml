@@ -84,23 +84,10 @@ spec:
     volumeMounts:
     - mountPath: /var/lib/containers
       name: varlibcontainers
-    - name: quay-auth-secret
-      mountPath: $(workspaces.output.path)/secrets
     workingDir: $(workspaces.output.path)
   volumes:
   - emptyDir: {}
     name: varlibcontainers
-  - name: quay-auth-secret
-    secret:
-      secretName: dockerconfigjson
-      items:
-        - key: .dockerconfigjson
-          path: config.json
   workspaces:
   - name: output  
   - name: source
-  - description: An optional workspace that allows providing a .docker/config.json
-      file for Buildah to access the container registry. The file should be placed
-      at the root of the Workspace with name config.json or .dockerconfigjson.
-    name: dockerconfig
-    optional: true
