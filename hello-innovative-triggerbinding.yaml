@@ -2,7 +2,7 @@
 apiVersion: triggers.tekton.dev/v1alpha1
 kind: ClusterTriggerBinding
 metadata:
-  name: hello-chris-binding 
+  name: hello-innovative-binding 
 spec:
   params:
   - name: deployment-name

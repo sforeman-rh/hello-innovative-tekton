@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
-  name: hello-chris-pipeline
+  name: hello-innovative-pipeline
 spec:
   workspaces:
   - name: shared-workspace
@@ -45,7 +45,7 @@ spec:
   - name: build-image
     taskRef:
       name: buildah
-      kind: ClusterTask
+      kind: Task
     params:
     - name: IMAGE
       value: $(params.IMAGE)

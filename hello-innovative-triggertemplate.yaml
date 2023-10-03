@@ -2,7 +2,7 @@
 apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerTemplate
 metadata:
-  name: hello-chris-template 
+  name: hello-innovative-template 
 spec:
   params:
   - name: git-url
@@ -18,11 +18,11 @@ spec:
   - apiVersion: tekton.dev/v1beta1
     kind: PipelineRun
     metadata:
-      name: hello-chris-$(tt.params.deployment-name)-$(uid)
+      name: hello-innovative-$(tt.params.deployment-name)-$(uid)
     spec:
       serviceAccountName: pipeline
       pipelineRef:
-        name: hello-chris-pipeline 
+        name: hello-innovative-pipeline 
       params:
       - name: deployment-name
         value: $(tt.params.working-dir) 
@@ -33,7 +33,7 @@ spec:
       - name: working-dir
         value: $(tt.params.working-dir)
       - name: IMAGE
-        value: "image-registry.openshift-image-registry.svc:5000/tekton-pipeline-test/$(tt.params.deployment-name)"
+        value: "registry.redhat.io/ubi8/python-39:1-144.1695267214/$(tt.params.deployment-name)"
       workspaces:
       - name: shared-workspace
         persistentvolumeclaim:

@@ -6,7 +6,7 @@ This project also shows an example of using the `EventListener` CEL intercepter 
 ## Setup
 
 ###
-Apply the resources found in this repository. The two demo projects are found in /hello-chris and /hello-dave
+Apply the resources found in this repository. The two demo projects are found in /hello-innovative and /hello-dave
 
 ### Modify Buildah Task
 To make this work I used the generic git-clone `ClusterTask` but modified the generic buildah `ClusterTask` to include a seperate workspace called `output` for consumption of the output of the git-clone task.
@@ -61,12 +61,12 @@ This example uses GitLab, but can be easily modified for GitHub by changing the 
 
 ## Running
 For the `EventListener` to work correctly the user commiting their code must add the name of the project as the first part of their commit, for example,
-`git commit -am 'hello-chris updating README'
+`git commit -am 'hello-innovative updating README'
 
 To trigger hello-dave it would be
 `git commit -am 'hello-dave updating README'
 
-The above assumes that the code and `Dockerfile` exist on the directory layer of hello-chris and hello-dave, this can be modifed by changing the Dockerfile path in the `Pipeline` and by modifying the `Dockerfile` ADD commands.
+The above assumes that the code and `Dockerfile` exist on the directory layer of hello-innovative and hello-dave, this can be modifed by changing the Dockerfile path in the `Pipeline` and by modifying the `Dockerfile` ADD commands.
 
-This example also assumes that hello-dave can use the same `Pipeline` as hello-chris, this can be modified by changing the template in the `EventListener` and adding a new `TriggerTemplate` that has a new `PipelineRun` definition for hello-dave if the build process was different between the two projects. For example, if one was a backend application using java and the other was a front end project using nodejs.
+This example also assumes that hello-dave can use the same `Pipeline` as hello-innovative, this can be modified by changing the template in the `EventListener` and adding a new `TriggerTemplate` that has a new `PipelineRun` definition for hello-dave if the build process was different between the two projects. For example, if one was a backend application using java and the other was a front end project using nodejs.
 Feel free to pull, fork, and modify as desired.

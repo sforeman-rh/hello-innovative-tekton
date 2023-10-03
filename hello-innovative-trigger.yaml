@@ -1,10 +1,10 @@
 apiVersion: triggers.tekton.dev/v1alpha1
 kind: Trigger
 metadata:
-  name: hello-chris-trigger
+  name: hello-innovative-trigger
 spec:
   serviceAccountName: pipeline
   bindings:
-    - ref: hello-chris-triggerbinding 
+    - ref: hello-innovative-triggerbinding 
   template:
-     name: hello-chris-triggertemplate 
+     name: hello-innovative-triggertemplate 

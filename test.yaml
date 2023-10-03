@@ -1,24 +1,24 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  name: hello-chris-test
+  name: hello-innovative-test
 spec:
   serviceAccountName: pipeline
   pipelineRef:
-    name: hello-chris-pipeline
+    name: hello-innovative-pipeline
   params:
   - name: deployment-name
-    value: "hello-chris"
+    value: "hello-innovative"
   - name: git-url
-    value: "ssh://git@gitlab.consulting.redhat.com:2222/cnuland/hello-chris.git"
+    value: "https://github.com/sforeman-rh/hello-innovative-tekton.git"
   - name: git-revision
     value: "master"
   - name: IMAGE
-    value: "image-registry.openshift-image-registry.svc:5000/tekton-pipeline-test/hello-chris"
+    value: "registry.redhat.io/ubi8/python-39:1-144.1695267214"
   - name: TLSVERIFY
     value: "false"
   - name: working-dir
-    value: "hello-chris"
+    value: "hello-innovative"
   workspaces:
   - name: shared-workspace
     persistentvolumeclaim:
