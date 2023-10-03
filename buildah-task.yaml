@@ -72,7 +72,6 @@ spec:
 
       buildah --storage-driver=$(params.STORAGE_DRIVER) push \
         $(params.PUSH_EXTRA_ARGS) --tls-verify=$(params.TLSVERIFY) \
-        --authfile /workspace/output/secrets/config.json \
         --digestfile $(workspaces.source.path)/image-digest $(params.IMAGE) \
         docker://$(params.IMAGE)
       cat $(workspaces.source.path)/image-digest | tee /tekton/results/APP_IMAGE_DIGEST
