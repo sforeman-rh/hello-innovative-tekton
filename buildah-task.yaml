@@ -47,7 +47,7 @@ spec:
     description: Extra parameters passed for the push command when pushing images.
     name: PUSH_EXTRA_ARGS
     type: string
-  - default: "false"
+  - default: "true"
     description: Skip pushing the built image
     name: SKIP_PUSH
     type: string
