@@ -1,3 +1,4 @@
+Flask
 requests
 weaviate_client==3.19.2
 anthropic==0.2.9

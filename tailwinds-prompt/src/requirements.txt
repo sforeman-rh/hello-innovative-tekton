@@ -1,3 +1,4 @@
+Flask
 requests
 aws-lambda-powertools[tracer]
 weaviate_client==3.19.2
