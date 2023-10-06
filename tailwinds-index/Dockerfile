@@ -13,7 +13,8 @@ MAINTAINER Sam Foreman
 #RUN curl -O https://lambda-insights-extension.s3-ap-northeast-1.amazonaws.com/amazon_linux/lambda-insights-extension.rpm && \
 #    rpm -U lambda-insights-extension.rpm && \
 #    rm -f lambda-insights-extension.rpm
-    
+
+# remove 'tailwinds-index/' for local builds    
 COPY tailwinds-index/main.py .
 COPY tailwinds-index/requirements.txt .
 COPY tailwinds-index/botocore-1.31.21-py3-none-any.whl .
