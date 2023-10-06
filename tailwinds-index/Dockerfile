@@ -14,10 +14,10 @@ MAINTAINER Sam Foreman
 #    rpm -U lambda-insights-extension.rpm && \
 #    rm -f lambda-insights-extension.rpm
     
-COPY main.py .
-COPY requirements.txt .
-COPY botocore-1.31.21-py3-none-any.whl .
-COPY boto3-1.28.21-py3-none-any.whl .
+COPY tailwinds-index/main.py .
+COPY tailwinds-index/requirements.txt .
+COPY tailwinds-index/botocore-1.31.21-py3-none-any.whl .
+COPY tailwinds-index/boto3-1.28.21-py3-none-any.whl .
 
 RUN pip install -r requirements.txt
 EXPOSE 8080
