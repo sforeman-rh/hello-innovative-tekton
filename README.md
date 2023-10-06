@@ -15,3 +15,6 @@ $ oc apply -f kickoff-build/
 To deploy, wait until the pipelinerun completes successfully.  Then - 
 $ oc new-app tailwinds-index:latest 
 
+
+To clean up -
+$ oc delete project tailwinds
