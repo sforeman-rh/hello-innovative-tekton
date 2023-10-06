@@ -10,7 +10,7 @@ spec:
   - name: deployment-name
     value: "tailwinds-index"
   - name: git-url
-    value: "https://github.com/innovativeSol/internal-onramp-tailwinds-aws-native.git"
+    value: "https://github.com/sforeman-rh/hello-innovative-tekton.git"
   - name: git-revision
     value: "rosa"
   - name: IMAGE
