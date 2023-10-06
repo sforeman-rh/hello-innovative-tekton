@@ -10,10 +10,14 @@ To build in openshift -
 $ oc new-project tailwinds
 $ oc apply -f init/
 $ oc apply -f tailwinds-index/openshift/
+$ oc apply -f tailwinds-domain/openshift/
+$ oc apply -f tailwinds-prompt/openshift/
 $ oc apply -f kickoff-build/
 
 To deploy, wait until the pipelinerun completes successfully.  Then - 
-$ oc new-app tailwinds-index:latest 
+$ oc new-app tailwinds-index:latest
+$ oc new-app tailwinds-domain:latest
+$ oc new-app tailwinds-prompt:latest 
 
 
 To clean up -
