@@ -3,7 +3,7 @@ kind: PipelineRun
 metadata:
   name: tailwinds-index-pipelinerun
 spec:
-  serviceAccountName: tailwinds-index-pipeline
+  serviceAccountName: pipeline
   pipelineRef:
     name: tailwinds-index-pipeline
   params:
@@ -18,7 +18,7 @@ spec:
   - name: TLSVERIFY
     value: "false"
   - name: working-dir
-    value: "handlers/index"
+    value: "tailwinds-index"
   workspaces:
   - name: shared-workspace
     persistentvolumeclaim:
