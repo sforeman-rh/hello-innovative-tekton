@@ -12,7 +12,7 @@ spec:
   - name: git-url
     value: "https://github.com/sforeman-rh/hello-innovative-tekton.git"
   - name: git-revision
-    value: "rosa"
+    value: "test"
   - name: IMAGE
     value: "image-registry.openshift-image-registry.svc:5000/tailwinds/tailwinds-index:latest"
   - name: TLSVERIFY
