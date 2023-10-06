@@ -1,0 +1,25 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: tailwinds-prompt-pipelinerun
+spec:
+  serviceAccountName: pipeline
+  pipelineRef:
+    name: tailwinds-prompt-pipeline
+  params:
+  - name: deployment-name
+    value: "tailwinds-prompt"
+  - name: git-url
+    value: "https://github.com/sforeman-rh/hello-innovative-tekton.git"
+  - name: git-revision
+    value: "test"
+  - name: IMAGE
+    value: "image-registry.openshift-image-registry.svc:5000/tailwinds/tailwinds-prompt:latest"
+  - name: TLSVERIFY
+    value: "false"
+  - name: working-dir
+    value: "tailwinds-prompt/src"
+  workspaces:
+  - name: shared-workspace
+    persistentvolumeclaim:
+      claimName: tailwinds-prompt-pvc
