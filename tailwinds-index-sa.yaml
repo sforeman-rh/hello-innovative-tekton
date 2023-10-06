@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tailwinds-index-pipeline
+secret:
+  name: git-ssh

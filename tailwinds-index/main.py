@@ -3,8 +3,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Hello, this is version 2!"
+    return "Welcome to my app!"
 
 if __name__ == "__main__":
-    print("hello world!")
+    print("this is index!")
     app.run(host='0.0.0.0')
